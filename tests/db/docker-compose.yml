@@ -5,3 +5,4 @@ services:
     image: surrealdb/surrealdb:latest
     ports:
       - 8082:8000
+    command: start --user root --pass root --log debug memory

@@ -154,7 +154,8 @@ public readonly struct SurrealRestResponse : ISurrealResponse
         AllowTrailingCommas = true,
         ReadCommentHandling = JsonCommentHandling.Skip,
         WriteIndented = false,
-        DefaultIgnoreCondition = JsonIgnoreCondition.Always,
+        // This was throwing an exception when set to JsonIgnoreCondition.Always
+        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
         DictionaryKeyPolicy = JsonLowerSnakeCaseNamingPolicy.Instance,
         Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
         IgnoreReadOnlyFields = false,
